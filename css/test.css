@@ -139,3 +139,15 @@ footer{
 .social-icons a:hover {
   background-color: #159A92;
 }
+
+.videoformatting{
+  height: 340px;
+  width: 560px;
+}
+
+@media (max-width: 450px) {
+  .videoformatting{
+    height: 315px;
+    width: 374px;
+  }
+}
