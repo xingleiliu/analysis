@@ -51,10 +51,9 @@
             <div class="container">
                 <h3 class="mb-0" style="font-family: 'Exo 2', sans-serif; color: #1B1B1B;">Sample Data</h3>
                 <br>
-                <div class="container" style="margin-top: -250px !important;">
-                    <div class="range-slider">
-                        <input id="rs-range-line" class="rs-range" type="range" oninput="togglerange(this)" value="0" min="0" max="24">
-                    </div>
+                <div class="range-slider">
+                    <input class="range-slider__range" oninput="togglerange(this)" type="range" value="0" min="0" max="24" style="width: 40% !important;">
+                    <span class="range-slider__value">0</span>
                 </div>
                 <br>
                 <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
@@ -1078,8 +1077,9 @@
             inputType =$("input[type=range]");
             owl.owlCarousel({
                 loop:false,
+                dots:false,
                 margin:10,
-                nav:true,
+                nav:false,
                 lazyLoad:true,
                 navText: ["<i class='fa fa-arrow-left fa-2x' style='color: #1B1B1B !important;'></i>", "<i class='fa fa-arrow-right fa-2x' style='color: #1B1B1B !important'></i>"],
                 'responsive': {
@@ -1146,6 +1146,26 @@
                     element.step = 1;
                 }
             }
+        </script>
+        <script>
+            var rangeSlider = function(){
+            var slider = $('.range-slider'),
+                range = $('.range-slider__range'),
+                value = $('.range-slider__value');
+                
+            slider.each(function(){
+
+                value.each(function(){
+                var value = $(this).prev().attr('value');
+                $(this).html(value);
+                });
+
+                range.on('input', function(){
+                $(this).next(value).html(this.value);
+                });
+            });
+            };
+            rangeSlider();
         </script>
     </body>
 </html>
