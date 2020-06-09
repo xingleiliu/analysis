@@ -1108,7 +1108,7 @@
             $(".back-me").on("click", function() {
                 owl.trigger("prev.owl.carousel");
             });
-            $("input").on("change", function(e) {
+            $("input").on("input", function(e) {
                 e.preventDefault();
                 // console.log(e.item.index);
                 // FIGURE OUT HOW TO GET CAROUSEL INDEX
@@ -1122,6 +1122,7 @@
                 }
                 $('.owl-carousel').trigger('to.owl.carousel', [value,1,true]);
                 console.log(value);
+                return;
             });
         });
         </script>
