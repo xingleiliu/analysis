@@ -281,3 +281,18 @@ input::-moz-focus-inner, input::-moz-focus-outer {
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
 }
+
+.filterSection li {
+  list-style: none;
+  margin-left: -60px;
+  padding: 5px;
+  display: inline;
+   
+}
+
+.showItem {
+  display: list-item;
+}
+.hideItem {
+  display: none;
+}
