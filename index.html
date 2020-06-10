@@ -54,22 +54,22 @@
                 <p class="text-black-50 mb-5" style="margin-top: -10px;">We have developed a database of 30,000 public cameras as well as a databse of camera data such as static pictures and videos for the duration of the covid-19 pandemic. Below is a representative sample of our data where these 5 cameras from 5 distinct locations hold pictures for a 30 day duration. You can scrub through the slider to view each image as well as create a timelapse effect.</p>
                 <div class="col-lg-9 mx-auto" style="margin-bottom: 100px;">
                     <!-- Accordion -->
-                    <ul class="filterSection">
+                    <ul class="filterSection" style=" margin-left: -50px !important">
                         <li>
                             <strong>Show:</strong>
                             <input checked="true" type="checkbox" value="city"/>
-                            <label>city</label>
+                            <label style="margin-left: -20px;">city</label>
                         </li>
                         <li>
                             <input checked="true" type="checkbox" value="suburb"/>
-                            <label>suburb</label>
+                            <label style="margin-left: -20px;">suburb</label>
                         </li>
                         <li>
                             <input checked="true" type="checkbox" value="rural"/>
-                            <label>rural</label>
+                            <label style="margin-left: -20px;">rural</label>
                         </li>
                     </ul>
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for places..">
                     <div id="accordionExample" class="accordion bg-light shadow">
                         <!-- Accordion item 1 -->
                         <li data-type = "city" style="list-style: none;">
