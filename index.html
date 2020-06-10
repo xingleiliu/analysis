@@ -59,6 +59,7 @@
                         <!-- Accordion item 1 -->
                         <li style="list-style: none;">
                             <a style="display: none !important;">New York City, New York</a>
+                            <p style="display: none !important;" >8399000</p>
                             <div class="card">
                                 <a style="display: none !important;">New York City, New York</a>
                                 <div id="headingOne" class="card-header bg-white shadow-sm border-0">
@@ -254,6 +255,7 @@
                         </li>
                         <li style="list-style: none;">
                             <a style="display: none !important;">Edison, New Jersey</a>
+                            <p style="display: none !important;" >100693</p>
                             <div class="card">
                                 <a style="display: none !important;">Edison, New Jersey</a>
                                 <div id="headingTwo" class="card-header bg-white shadow-sm border-0">
@@ -449,6 +451,7 @@
                         </li>
                         <li style="list-style: none;">
                             <a style="display: none !important;">West Lafayette, Indiana</a>
+                            <p style="display: none !important;" >48308</p>
                             <div class="card">
                                 <a style="display: none !important;">West Lafayette, Indiana</a>
                                 <div id="headingThree" class="card-header bg-white shadow-sm border-0">
@@ -803,22 +806,39 @@
         </script>
         <script>
             function myFunction() {
-            // Declare variables
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById('myInput');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("accordionExample");
-            li = ul.getElementsByTagName('li');
-            console.log(li.length);
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-                } else {
-                li[i].style.display = "none";
+                // Declare variables
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById('myInput');
+                if(isNaN(input.value) == false)
+                {
+                    filter = parseInt(input.value);
+                    ul = document.getElementById("accordionExample");
+                    li = ul.getElementsByTagName('li');
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("p")[0];
+                        txtValue = a.textContent || a.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                        } else {
+                        li[i].style.display = "none";
+                        }
+                    }
                 }
-            }
+                else
+                {
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("accordionExample");
+                    li = ul.getElementsByTagName('li');
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        txtValue = a.textContent || a.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                        } else {
+                        li[i].style.display = "none";
+                        }
+                    }
+                }
             }
         </script>
     </body>
