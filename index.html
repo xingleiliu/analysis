@@ -760,9 +760,7 @@
                 e.preventDefault();
                 // FIGURE OUT HOW TO GET CAROUSEL INDEX
                 var value = inputType.val();
-                if($(window).width() <700)
-                    console.log("HEY")
-                else if(value == 24 && window.value ==23)
+                if($(window).width() >700&&value == 24 && window.value ==23)
                 {
                     value = window.value;
                     inputType.val(value);
