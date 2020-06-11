@@ -54,3 +54,39 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
+
+
+//curl -location --request GET 'https://api.smartable.ai/coronavirus/stats/US' --header 'Subscription-Key: 3009d4ccc29e4808af1ccc25c69b4d5d'
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+$("document").ready(function(){
+    $.ajax({ 
+        type : "GET", 
+        url : "https://api.smartable.ai/coronavirus/stats/US-NY", 
+        beforeSend: function(xhr){xhr.setRequestHeader('Subscription-Key', '3009d4ccc29e4808af1ccc25c69b4d5d');},
+        success : function(result) { 
+            //set your variable to the result 
+            $("#casesNY").text(numberWithCommas(result.stats.totalConfirmedCases));
+            console.log(result)
+        }, 
+        error : function(result) { 
+          //handle the error 
+            console.log(result)
+        } 
+    }); 
+    $.ajax({ 
+        type : "GET", 
+        url : "https://api.smartable.ai/coronavirus/stats/global", 
+        beforeSend: function(xhr){xhr.setRequestHeader('Subscription-Key', '3009d4ccc29e4808af1ccc25c69b4d5d');},
+        success : function(result) { 
+            //set your variable to the result 
+            console.log(result)
+        }, 
+        error : function(result) { 
+          //handle the error 
+            console.log(result)
+        } 
+    });
+})
