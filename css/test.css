@@ -297,3 +297,11 @@ input::-moz-focus-inner, input::-moz-focus-outer {
 .hideItem {
   display: none;
 }
+
+@media (max-width: 765px) {
+  .IMAGER{
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
