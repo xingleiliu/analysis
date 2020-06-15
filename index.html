@@ -60,10 +60,6 @@
                             <input checked="true" type="checkbox" value="city"/>
                             <label style="margin-left: -35px; margin-right: -40px;">city</label>
                         </li>
-                        <li style="margin-right: -30px;">
-                            <input checked="true" type="checkbox" value="suburb"/>
-                            <label style="margin-left: -35px;">suburb</label>
-                        </li>
                         <li>
                             <input checked="true" type="checkbox" value="beach"/>
                             <label style="margin-left: -35px;">beach</label>
@@ -1972,7 +1968,9 @@
                     <div class="col-md-9">
                     <h3 style="font-size: 25px; font-weight: 300;">Observing Responses to the COVID-19 Pandemic using Worldwide Network Cameras</h3>
                     <p class="text-black-50">COVID-19 has resulted in a worldwide pandemic, leading to "lockdown" policies and social distancing. The pandemic has profoundly changed the world. Traditional methods for observing these historical events are difficult because sending reporters to areas with many infected people can put the reporters' lives in danger. New technologies are needed for safely observing responses to these policies. This paper reports using thousands of network cameras deployed worldwide for the purpose of witnessing activities in response to the policies.</p>
-                    <a class="btn btn-dark" href="2005.09091.pdf" target="_blank">View Paper</a>
+                    <a class="btn btn-dark inline" href="2005.09091.pdf" target="_blank">View Paper</a>
+                    <a id="Citation_1" style="display: none;">Citation_1</a>
+                    <a class="btn btn-dark inline"  onclick="Copy_To_Clip_Board('#Citation_1')" style="color:white;">Cite</a>
                     </div>
                 </div>
                 <hr>
@@ -1986,7 +1984,9 @@
                     <div class="col-md-9">
                     <h3 style="font-size: 25px; font-weight: 300;">See the World through Network Cameras</h3>
                     <p class="text-black-50">This paper describes the real-time data available from worldwide network cameras and potential applications. Second, this paper outlines the CAM2 System available to users at this https URL. This information includes strategies to discover network cameras and create the camera database, user interface, and computing platforms. Third, this paper describes many opportunities provided by data from network cameras and challenges to be addressed.</p>
-                    <a class="btn btn-dark" href="1904.06775.pdf" target="_blank">View Paper</a>
+                    <a class="btn btn-dark inline" href="1904.06775.pdf" target="_blank">View Paper</a>
+                    <a id="Citation_2"  style="display: none;">Citation_2</a>
+                    <a class="btn btn-dark inline"  onclick="Copy_To_Clip_Board('#Citation_2')" style=" color:white; ">Cite</a>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -2231,6 +2231,17 @@
                     }
                 }
                 element.className = filteredList.join(" ");
+            }
+        </script>
+        <script>
+            function Copy_To_Clip_Board(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+            /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
             }
         </script>
     </body>

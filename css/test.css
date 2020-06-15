@@ -305,3 +305,8 @@ input::-moz-focus-inner, input::-moz-focus-outer {
     margin-right: auto !important;
   }
 }
+
+.inline {
+  display:inline-block;
+  margin-right:5px;
+}
