@@ -1970,7 +1970,7 @@
                     <p class="text-black-50">COVID-19 has resulted in a worldwide pandemic, leading to "lockdown" policies and social distancing. The pandemic has profoundly changed the world. Traditional methods for observing these historical events are difficult because sending reporters to areas with many infected people can put the reporters' lives in danger. New technologies are needed for safely observing responses to these policies. This paper reports using thousands of network cameras deployed worldwide for the purpose of witnessing activities in response to the policies.</p>
                     <a class="btn btn-dark inline" href="2005.09091.pdf" target="_blank">View Paper</a>
                     <a id="Citation_1" style="display: none;">Citation_1</a>
-                    <a class="btn btn-dark inline"  onclick="Copy_To_Clip_Board('#Citation_1')" style="color:white;">Cite</a>
+                    <a class="btn btn-dark inline"  onclick="Copy_To_Clip_Board('#Citation_1')" style=" color:white;" role="button" data-toggle="popover" data-placement="top" data-content="Citation Copied">Cite</a>
                     </div>
                 </div>
                 <hr>
@@ -1986,7 +1986,7 @@
                     <p class="text-black-50">This paper describes the real-time data available from worldwide network cameras and potential applications. Second, this paper outlines the CAM2 System available to users at this https URL. This information includes strategies to discover network cameras and create the camera database, user interface, and computing platforms. Third, this paper describes many opportunities provided by data from network cameras and challenges to be addressed.</p>
                     <a class="btn btn-dark inline" href="1904.06775.pdf" target="_blank">View Paper</a>
                     <a id="Citation_2"  style="display: none;">Citation_2</a>
-                    <a class="btn btn-dark inline"  onclick="Copy_To_Clip_Board('#Citation_2')" style=" color:white; ">Cite</a>
+                    <a class="btn btn-dark inline"  onclick="Copy_To_Clip_Board('#Citation_2')" style=" color:white;" role="button" data-toggle="popover" data-placement="top" data-content="Citation Copied">Cite</a>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -2243,6 +2243,21 @@
             /* Alert the copied text */
             alert("Copied the text: " + copyText.value);
             }
+        </script>
+        <script>
+            $(function () {
+                $('[data-toggle="popover"]').popover()
+            })
+        </script>
+        <script>
+            $('body').on('click', function (e) {
+                $('[data-toggle=popover]').each(function () {
+                    // hide any open popovers when the anywhere else in the body is clicked
+                    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                        $(this).popover('hide');
+                    }
+                });
+            });
         </script>
     </body>
 </html>
