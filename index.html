@@ -1946,7 +1946,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                         <div class="range-slider" style="text-align: center; margin-top: 20px;">
                                             <input class="range-slider__range r8" oninput="togglerange(this)" type="range" value="0" min="0" max="30" style="width: 40% !important;">
                                             <span class="range-slider__value">0</span>
@@ -2026,71 +2025,70 @@
         $(document).ready(function() {
             var owl = $(".owl-carousel");
             var inputType = $(".range-slider__range.r1[type=range]");;
+            /*
+                $(".range-slider__range.r1").focus(function(){
+                    inputType = $(".range-slider__range.r1[type=range]");
+                });
 
-            $(".range-slider__range.r1").focus(function(){
-                inputType = $(".range-slider__range.r1[type=range]");
-            });
+                $(".range-slider__range.r1").click(function(){
+                    inputType = $(".range-slider__range.r1[type=range]");
+                });
 
-            $(".range-slider__range.r1").click(function(){
-                inputType = $(".range-slider__range.r1[type=range]");
-            });
+                $(".range-slider__range.r2").focus(function(){
+                    inputType = $(".range-slider__range.r2[type=range]");
+                });
+                $(".range-slider__range.r2").click(function(){
+                    inputType = $(".range-slider__range.r2[type=range]");
+                });
 
-            $(".range-slider__range.r2").focus(function(){
-                inputType = $(".range-slider__range.r2[type=range]");
-            });
-            $(".range-slider__range.r2").click(function(){
-                inputType = $(".range-slider__range.r2[type=range]");
-            });
+                $(".range-slider__range.r3").focus(function(){
+                    inputType = $(".range-slider__range.r3[type=range]");
+                });
 
-            $(".range-slider__range.r3").focus(function(){
-                inputType = $(".range-slider__range.r3[type=range]");
-            });
+                $(".range-slider__range.r3").click(function(){
+                    inputType = $(".range-slider__range.r3[type=range]");
+                });
 
-            $(".range-slider__range.r3").click(function(){
-                inputType = $(".range-slider__range.r3[type=range]");
-            });
+                $(".range-slider__range.r4").focus(function(){
+                    inputType = $(".range-slider__range.r4[type=range]");
+                });
 
-            $(".range-slider__range.r4").focus(function(){
-                inputType = $(".range-slider__range.r4[type=range]");
-            });
+                $(".range-slider__range.r4").click(function(){
+                    inputType = $(".range-slider__range.r4[type=range]");
+                });
 
-            $(".range-slider__range.r4").click(function(){
-                inputType = $(".range-slider__range.r4[type=range]");
-            });
+                $(".range-slider__range.r5").focus(function(){
+                    inputType = $(".range-slider__range.r5[type=range]");
+                });
 
-            $(".range-slider__range.r5").focus(function(){
-                inputType = $(".range-slider__range.r5[type=range]");
-            });
+                $(".range-slider__range.r5").click(function(){
+                    inputType = $(".range-slider__range.r5[type=range]");
+                });
+                
+                $(".range-slider__range.r6").focus(function(){
+                    inputType = $(".range-slider__range.r6[type=range]");
+                });
 
-            $(".range-slider__range.r5").click(function(){
-                inputType = $(".range-slider__range.r5[type=range]");
-            });
-            
-            $(".range-slider__range.r6").focus(function(){
-                inputType = $(".range-slider__range.r6[type=range]");
-            });
+                $(".range-slider__range.r6").click(function(){
+                    inputType = $(".range-slider__range.r6[type=range]");
+                });
 
-            $(".range-slider__range.r6").click(function(){
-                inputType = $(".range-slider__range.r6[type=range]");
-            });
+                $(".range-slider__range.r7").focus(function(){
+                    inputType = $(".range-slider__range.r7[type=range]");
+                });
 
-            $(".range-slider__range.r7").focus(function(){
-                inputType = $(".range-slider__range.r7[type=range]");
-            });
+                $(".range-slider__range.r7").click(function(){
+                    inputType = $(".range-slider__range.r7[type=range]");
+                });
 
-            $(".range-slider__range.r7").click(function(){
-                inputType = $(".range-slider__range.r7[type=range]");
-            });
+                $(".range-slider__range.r8").focus(function(){
+                    inputType = $(".range-slider__range.r8[type=range]");
+                });
 
-            $(".range-slider__range.r8").focus(function(){
-                inputType = $(".range-slider__range.r8[type=range]");
-            });
-
-            $(".range-slider__range.r8").click(function(){
-                inputType = $(".range-slider__range.r8[type=range]");
-            });
-
-
+                $(".range-slider__range.r8").click(function(){
+                    inputType = $(".range-slider__range.r8[type=range]");
+                });
+            */
             owl.owlCarousel({
                 loop:false,
                 dots:false,
@@ -2125,6 +2123,7 @@
             });
             $("input").on("input", function(e) {
                 e.preventDefault();
+                $('input[type=range]').val($(this).val())
                 // FIGURE OUT HOW TO GET CAROUSEL INDEX
                 var value = inputType.val();
                 if($(window).width() >700&&value == 24 && window.value ==23)
