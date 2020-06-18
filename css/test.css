@@ -210,7 +210,6 @@ footer{
 .range-slider__value {
   display: inline-block;
   position: relative;
-  width: 60px;
   color: #fff;
   line-height: 20px;
   text-align: center;

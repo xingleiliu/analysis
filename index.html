@@ -2128,7 +2128,20 @@
                 var sliders = $('input[type=range]');
                 sliders.each(function(){
                     var value_cont = $(".range-slider__value." + $(this)[0].classList[1]);
-                    value_cont.text($(this)[0].value)
+                    var value = Number($(this)[0].value)+1;
+                    var minced = $(window).width();
+                    if (minced >= 1100)
+                    {
+                        value_cont.text("4/"+value+" - "+"4/"+String(Number($(this)[0].value)+3))
+                    }
+                    else if(minced >=700)
+                    {
+                        value_cont.text("4/"+value+" - "+"4/"+String(Number($(this)[0].value)+2))
+                    }
+                    else
+                    {
+                        value_cont.text("4/"+value)
+                    }
                 })
                 // FIGURE OUT HOW TO GET CAROUSEL INDEX
                 var value = inputType.val();
