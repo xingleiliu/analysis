@@ -334,3 +334,15 @@ input::-moz-focus-inner, input::-moz-focus-outer {
     display: none;
   }
 }
+@media(max-width: 699px)
+{
+  .s-three{
+    display: none;
+  }
+  .s-two{
+    display: none;
+  }
+  .s-one{
+    display: inline-block;
+  }
+}
